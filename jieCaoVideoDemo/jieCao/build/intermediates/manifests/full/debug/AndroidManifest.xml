@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.jzvd.demo"
+    android:versionCode="74"
+    android:versionName="6.2.3" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="27" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- To store the heap dumps and leak analysis results. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="cn.jzvd.demo.ApplicationDemo"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="cn.jzvd.demo.ActivityMain"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cn.jzvd.demo.ActivityDirectPlay"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityListView"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityListViewNormal"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityTinyWindowListViewNormal"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityListViewFragmentViewPager"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityListViewMultiHolder"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityTinyWindowRecycleView"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityTinyWindow"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityTinyWindowListViewMultiHolder"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityTinyWindowRecycleViewMultiHolder"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityApi"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityApiUISmallChange"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityApiUIBigChange"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityApiRotationVideoSize"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityApiCustomMediaPlayer"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityListViewRecyclerView"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityWebView"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityApiOrientation"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.jzvd.demo.ActivityApiExtendsNormal"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.squareup.leakcanary.internal.HeapAnalyzerService"
+            android:enabled="false"
+            android:process=":leakcanary" />
+        <service
+            android:name="com.squareup.leakcanary.DisplayLeakService"
+            android:enabled="false"
+            android:process=":leakcanary" />
+
+        <activity
+            android:name="com.squareup.leakcanary.internal.DisplayLeakActivity"
+            android:enabled="false"
+            android:icon="@drawable/leak_canary_icon"
+            android:label="@string/leak_canary_display_activity_label"
+            android:process=":leakcanary"
+            android:taskAffinity="com.squareup.leakcanary.cn.jzvd.demo"
+            android:theme="@style/leak_canary_LeakCanary.Base" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.squareup.leakcanary.internal.RequestStoragePermissionActivity"
+            android:enabled="false"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/leak_canary_icon"
+            android:label="@string/leak_canary_storage_permission_activity_label"
+            android:process=":leakcanary"
+            android:taskAffinity="com.squareup.leakcanary.cn.jzvd.demo"
+            android:theme="@style/leak_canary_Theme.Transparent" />
+    </application>
+
+</manifest>
